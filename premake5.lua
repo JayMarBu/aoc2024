@@ -8,7 +8,7 @@ workspace "AOC2024"
         "Release"
     }
 
-GOL_PATH = "E:/_Dev/gol"
+GOL_PATH = "C:/Repos/gol"
 
 include (GOL_PATH .. "/gollib.lua")
 

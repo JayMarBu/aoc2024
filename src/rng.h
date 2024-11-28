@@ -1,7 +1,7 @@
 #ifndef GOL_TESTBED_RNG_H
 #define GOL_TESTBED_RNG_H
 
-#include "gol/Core.h"
+#include "gol/detail/Core.h"
 namespace gol
 {
 	// Quick simple RNG based on Xorhash

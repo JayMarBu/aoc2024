@@ -1,7 +1,7 @@
 #ifndef GOL_TESTBED_TIMER_H
 #define GOL_TESTBED_TIMER_H
 
-#include "gol/Core.h"
+#include "gol/detail/Core.h"
 
 namespace gol
 {

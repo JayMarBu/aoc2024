@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
 #define DAY 3
 
 #define RUN_DAY(_day) int main() { day##_day(_day); system("pause"); }

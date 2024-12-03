@@ -35,8 +35,8 @@ void day1(int _day)
 	file.ReadTextLine(buff, 32);
 	const size_t line_count = gol::StrLen(buff);
 	const size_t file_size = file.GetSize();
-	gol::Vector<int> column_a(line_count * file_size);
-	gol::Vector<int> column_b(line_count * file_size);
+	gol::Vector<int> column_a(file_size / line_count);
+	gol::Vector<int> column_b(file_size / line_count);
 
 	do 
 	{

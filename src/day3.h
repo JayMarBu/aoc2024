@@ -15,7 +15,7 @@ int CharBuffToInt(gol::Slice<char> buff, int& idx)
 	{
 		const char c = buff[idx];
 		if (!AoC::CharIsNumber(c))
-		break;
+			break;
 
 		result *= 10;
 		result += CHAR_TO_INT(c);;

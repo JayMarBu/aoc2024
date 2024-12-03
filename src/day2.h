@@ -48,10 +48,10 @@ struct DataPoint
 
 inline bool IsSafeDiff(int diff) { return (gol::Abs(diff) >= 1 && gol::Abs(diff) <= 3); }
 
-void day2()
+void day2(int _day)
 {
-	gol::Timer timer;
-	gol::File file = AoC::LoadData(2);
+	
+	gol::File file = AoC::LoadData(_day);
 
 	char buff[32];
 	const size_t file_size = file.GetSize();
@@ -81,9 +81,11 @@ void day2()
 		}
 	}
 	while (file.ReadTextLine(buff, 32));
-	
+	file.Close();
 	int safe_count = 0;
-
+	
+	gol::Timer timer;
+	
 #if PART == 1
 	for (int i = 0; i < data.GetCount(); i++)
 	{

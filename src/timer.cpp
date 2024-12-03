@@ -15,6 +15,6 @@ namespace gol
 	{
 		const s64 end  = gol::Time::GetPlatformTimeVal(); 
 		const s64 freq = gol::Time::GetPlatformTimeFreq();
-		printf("    %0.1f ms\n", float(end - start) / float(freq) * 1000.0f);
+		printf("    %0.6f ms\n", float(end - start) / float(freq) * 1000.0f);
 	}
 }

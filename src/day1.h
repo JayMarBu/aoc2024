@@ -27,9 +27,9 @@ namespace
 	}
 }
 
-void day1()
+void day1(int _day)
 {
-	gol::File file = AoC::LoadData(1);
+	gol::File file = AoC::LoadData(_day);
 
 	char buff[32];
 	file.ReadTextLine(buff, 32);

@@ -16,8 +16,21 @@ namespace AoC
 	gol::File LoadData(int day, bool testData = false)
 	{
 		char buff[128];
+		gol::StrFmt(buff, 128, "res/day%i", day);
+		
+		if(!gol::FolderExists(buff))
+		{
+			gol::CreateFolder(buff);
+			gol::StrFmt(buff, 128, "res/day%i/%s", day, "test_data.txt");
+			gol::File file = gol::File::Create(buff);
+			file.Close();
+			gol::StrFmt(buff, 128, "res/day%i/%s", day, "data.txt");
+			file = gol::File::Create(buff);
+			file.Close();
+		}
+		
 		gol::StrFmt(buff, 128, "res/day%i/%s", day, testData ? "test_data.txt" : "data.txt");
-
+		gol_assertf_fatal(gol::FileExists(buff), "File [%s] does not exist!", buff);
 		return gol::File(buff);
 	}
 }

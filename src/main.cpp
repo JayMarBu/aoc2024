@@ -1,26 +1,16 @@
-
-#include "day1.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 
-int day = 1;
+#define DAY 2
 
-int main()
-{
-	switch (day)
-	{
-	case 1:
-		day1();
-		break;
+#define RUN_DAY(_day) int main() { day##_day(); system("pause"); }
 
-	case 2:
-		break;
+#if DAY == 1
+#include "day1.h"
+RUN_DAY(1);
 
-	//...'
-	default:
-		break;
-	}
-	
-	system("pause");
-}
+#elif DAY == 2
+#include "day2.h"
+RUN_DAY(2);
+
+#endif

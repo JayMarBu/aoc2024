@@ -8,20 +8,23 @@
 
 #define PART 2
 
-int CharBuffToInt(gol::Slice<char> buff, int& idx)
+namespace
 {
-	int result = 0;
-	for (; idx < buff.GetCount(); idx++)
+	int CharBuffToInt(gol::Slice<char> buff, int& idx)
 	{
-		const char c = buff[idx];
-		if (!AoC::CharIsNumber(c))
+		int result = 0;
+		for (; idx < buff.GetCount(); idx++)
+		{
+			const char c = buff[idx];
+			if (!AoC::CharIsNumber(c))
 			break;
 
-		result *= 10;
-		result += CHAR_TO_INT(c);;
-	}
+			result *= 10;
+			result += CHAR_TO_INT(c);;
+		}
 
-	return result;
+		return result;
+	}
 }
 
 void day1()
@@ -31,9 +34,9 @@ void day1()
 	char buff[32];
 	file.ReadTextLine(buff, 32);
 	const size_t line_count = gol::StrLen(buff);
-
-	gol::Vector<int> column_a(line_count+1);
-	gol::Vector<int> column_b(line_count+1);
+	const size_t file_size = file.GetSize();
+	gol::Vector<int> column_a(line_count * file_size);
+	gol::Vector<int> column_b(line_count * file_size);
 
 	do 
 	{

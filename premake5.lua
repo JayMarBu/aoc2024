@@ -41,7 +41,7 @@ project "AOC"
 	defines
 	{
 		--"GOL_USE_CPP_STD"
-		"GOL_ENABLE_ASSERTS"
+		--"GOL_ENABLE_ASSERTS"
 	}
 	
 	links

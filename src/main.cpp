@@ -1,20 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define DAY 3
+#define DAY 5
 
-#define RUN_DAY(_day) int main() { day##_day(_day); system("pause"); }
+#define RUN_DAY() GOL_CONCAT(day,DAY)(DAY)
 
 #if DAY == 1
 #include "day1.h"
-RUN_DAY(1);
-
 #elif DAY == 2
 #include "day2.h"
-RUN_DAY(2);
-
 #elif DAY == 3
 #include "day3.h"
-RUN_DAY(3);
-
+#elif DAY == 4
+#include "day4.h"
+#elif DAY == 5
+#include "day5.h"
 #endif
+
+int main() 
+{ 
+	RUN_DAY();
+	system("pause");
+}
+

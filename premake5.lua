@@ -8,7 +8,7 @@ workspace "AOC2024"
         "Release"
     }
 
-GOL_PATH = "E:/_Dev/gol"
+GOL_PATH = "C:/Repos/gol"
 
 include (GOL_PATH .. "/gollib.lua")
 
@@ -41,7 +41,7 @@ project "AOC"
 	defines
 	{
 		--"GOL_USE_CPP_STD"
-		--"GOL_ENABLE_ASSERTS"
+		"GOL_ENABLE_ASSERTS"
 	}
 	
 	links

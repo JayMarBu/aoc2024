@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define DAY 6
+#define DAY 7
 
 #define RUN_DAY() GOL_CONCAT(day,DAY)(DAY)
 
@@ -17,6 +17,8 @@
 #include "day5.h"
 #elif DAY == 6
 #include "day6.h"
+#elif DAY == 7
+#include "day7.h"
 #endif
 
 int main() 

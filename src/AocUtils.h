@@ -2,6 +2,7 @@
 #define AOC2024_UTILS_H
 
 #include "gol/FileSystem.h"
+#include "gol/Maths.h"
 
 #define CHAR_TO_INT(c) (c - 48)
 
@@ -44,9 +45,10 @@ namespace AoC
 		return gol::File(buff);
 	}
 	
-	int CharBuffToInt(gol::Slice<char> buff, int& idx)
+	template<typename INT_T>
+	INT_T CharBuffToInt(gol::Slice<char> buff, int& idx)
 	{
-		int result = 0;
+		INT_T result = 0;
 		for (; idx < buff.GetCount(); idx++)
 		{
 			const char c = buff[idx];
@@ -58,6 +60,29 @@ namespace AoC
 		}
 
 		return result;
+	}
+	
+	template <class INT_T>
+	int NumDigits(INT_T number)
+	{
+		int digits = 0;
+		if (number < 0) 
+			digits = 1;
+		while (number) 
+		{
+			number /= 10;
+			digits++;
+		}
+		return digits;
+	}
+	
+	template<typename INT_T>
+	INT_T ConcatinateInts(INT_T lhs, INT_T rhs)
+	{
+		int digits = NumDigits(rhs);
+		//int pow = GOL_MAX(digits, 0);
+		INT_T mult = gol::Pow(10, digits);
+		return (lhs * mult) + rhs;
 	}
 }
 
